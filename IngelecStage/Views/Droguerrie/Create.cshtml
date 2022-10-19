@@ -1,0 +1,57 @@
+﻿@model IngelecDroguerries.ViewModel.DroguerrieDestributeurViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+
+<hr />
+<div class="row" >
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data" >
+            @if (ViewBag.Message != null)
+            {
+                <h5 class="alert alert-danger">@ViewBag.Message</h5>
+            }
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="NomDroguerrie" class="control-label"></label>
+                <input asp-for="NomDroguerrie" class="form-control" />
+                <span asp-validation-for="NomDroguerrie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelDroguerrie" class="control-label"></label>
+                <input asp-for="TelDroguerrie" class="form-control" />
+                <span asp-validation-for="TelDroguerrie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailDroguerrie" class="control-label"></label>
+                <input asp-for="EmailDroguerrie" class="form-control" />
+                <span asp-validation-for="EmailDroguerrie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdressDroguerrie" class="control-label"></label>
+                <input asp-for="AdressDroguerrie" class="form-control" />
+                <span asp-validation-for="AdressDroguerrie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DestributeurId" class="control-label"></label>
+                <select asp-for="DestributeurId" class="form-control"
+                        asp-items="@(new SelectList(Model.Destributeurs, "Id", "NomDestributeur"))"></select>
+                <span asp-validation-for="DestributeurId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-outline-primary" />
+                <a asp-action="Index" class="btn btn-primary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+   <partial name="_Validation" />
+}

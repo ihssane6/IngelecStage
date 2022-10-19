@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar Dashboard Template</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+   
+
+    <!--header area end-->
+    <!--mobile navigation bar start-->
+    
+    <!--mobile navigation bar end-->
+    <!--sidebar start-->
+
+    <div class="sidebar">
+       
+        <a href="~/Home"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="/Identity/Account/Register"><i class="fas fa-user-alt"></i><span>create new user</span></a>
+        <a href="~/Destributeur/Create"><i class="fas fa-plus-square"></i><span>create new distributeur</span></a>
+        <a href="~/Droguerrie/Create"><i class="fas fa-plus-square"></i><span>create new droguerrie</span></a>
+
+        <a href="~/Role/Index"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+    </div>
+    <!--sidebar end-->
+
+        <div class="content">
+            <div class="booking">
+                <a href="~/Droguerrie"><i class="fas fa-store"></i><span>Droguerrie</span></a>
+            </div>
+            <div class="tracing">
+                <a href="~/Destributeur"><i class="fas fa-users"></i><span>Distributeur</span></a>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+    $(document).ready(function () {
+                $('.nav_btn').click(function () {
+                    $('.mobile_nav_items').toggleClass('active');
+                });
+            });</script>
+
+</body>
+</html>
